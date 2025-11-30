@@ -1,3 +1,78 @@
+/* Preloader Container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Or your brand background color */
+    z-index: 999999; /* Higher than everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* The Hide Class (Added via JS) */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Container for spinner and text */
+.loader-content {
+    text-align: center;
+}
+
+.loader-content p {
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+}
+
+/* The Spinner Animation */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #d4af37; /* Gold/Premium color - change to your brand color */
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- THE FIX: Start all caption elements hidden by default --- */
 .carousel-caption h1,
 .carousel-caption p,
@@ -768,6 +843,7 @@
 .whatsapp-fab:hover {
     background-color: #1DA851;
     transform: scale(1.05);
+    color: #fff;
 }
 
 /* END */
@@ -1187,4 +1263,36 @@
 .estimator-btn:hover {
     background-color: #d14849;
     color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Hover effect for the service cards */
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Set the icon color to a Gold/Premium look */
+.text-warning {
+    color: #d4af37 !important; /* Override bootstrap warning color with Gold */
+}
+
+/* Make the badges look cleaner */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
 }
